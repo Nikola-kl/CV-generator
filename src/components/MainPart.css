@@ -1,0 +1,43 @@
+.bottomMargin {
+  margin: 0 0 3em 0;
+}
+.mainPartContent {
+  margin-top: 3rem;
+}
+.personalInformation {
+  display: flex;
+  justify-content: center;
+}
+.personalInformation > div {
+  display: flex;
+  margin: 0.7em;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.sectionTitle {
+  background-color: var(--seagull-800);
+  color: var(--wild-sand-50);
+  padding: 0.1rem;
+}
+.section {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.section > div:nth-child(1) {
+  flex: 1 1 20%;
+  text-align: start;
+}
+
+.section > div:nth-child(2) {
+  flex: 1 1 80%;
+  text-align: start;
+}
+
+.experienceInfoCompany,
+.experienceInfoTitle {
+  font-weight: bold;
+  color: var(--wild-sand-600);
+}
