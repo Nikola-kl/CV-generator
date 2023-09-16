@@ -1,6 +1,7 @@
 import { Fragment, useState } from "react";
 import "./Form.css";
 
+// CHANGE THIS FUNCTIONALITY SO THAT YOU JUST UPDATE THE PERSONAL DETAILS WITHOUT ADDING BUTTON
 const PersonalInput = ({ handleSetAppData }) => {
   const [showMore, setShowMore] = useState(false);
 
@@ -34,17 +35,40 @@ const EducationInput = ({ handleSetAppData }) => {
   );
 };
 
+const ExperienceInput = ({ handleSetAppData }) => {
+  const [showMore, setShowMore] = useState(false);
+
+  const handleMoreClick = () => {
+    setShowMore(!showMore);
+  };
+
+  return (
+    <form action="" className="formFlex">
+      <button className="buttonTitle" type="button" onClick={handleMoreClick}>
+        <h2>Experience</h2>
+      </button>
+      {showMore && <ExperienceDetails handlesetAppData={handleSetAppData} />}
+    </form>
+  );
+};
+
 const PersonalDetails = ({ handleSetAppData }) => {
   const [personal, setPersonal] = useState({
     name: "",
     email: "",
     phone: "",
-    adress: "",
+    address: "",
   });
 
   const change = (event) => {
     const { name, value } = event.target;
+
     setPersonal({ ...personal, [name]: value });
+
+    handleSetAppData({
+      type: "personal",
+      information: { ...personal, [name]: value },
+    });
   };
 
   const addFunction = () => {
@@ -93,19 +117,19 @@ const PersonalDetails = ({ handleSetAppData }) => {
           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
         />
 
-        <label htmlFor="adress">
-          <span>Adress: </span>
+        <label htmlFor="address">
+          <span>Address: </span>
         </label>
         <input
           type="text"
-          id="adress"
-          name="adress"
-          value={personal.adress}
+          id="address"
+          name="address"
+          value={personal.address}
           onChange={change}
-          placeholder="Adress"
+          placeholder="Address"
         />
       </section>
-      <Actions addFunction={addFunction} />
+      {/* <Actions addFunction={addFunction} /> */}
     </>
   );
 };
@@ -201,7 +225,116 @@ const EducationDetails = ({ handlesetAppData }) => {
   );
 };
 
+const ExperienceDetails = ({ handlesetAppData }) => {
+  const [experience, setExperience] = useState({
+    companyName: "",
+    title: "",
+    start: "",
+    end: "",
+    location: "",
+    description: "",
+  });
+
+  const change = (event) => {
+    const { name, value } = event.target;
+    setExperience({ ...experience, [name]: value });
+  };
+
+  const addFunction = () => {
+    handlesetAppData({ type: "experience", information: { ...experience } });
+  };
+
+  return (
+    <>
+      <section className="formFlex">
+        <label htmlFor="name">
+          <span>Company: </span>
+        </label>
+        <input
+          type="text"
+          id="name"
+          name="companyName"
+          value={experience.companyName}
+          onChange={change}
+          placeholder="Company"
+        />
+
+        <label htmlFor="title">
+          <span>Job Title: </span>
+        </label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          value={experience.title}
+          onChange={change}
+          placeholder="Job Title"
+        />
+        <div className="datesInput">
+          <div>
+            <label htmlFor="start">
+              <span>Start Date: </span>
+            </label>
+            <input
+              type="date"
+              id="start"
+              name="start"
+              value={experience.start}
+              onChange={change}
+              placeholder="Start Date"
+            />
+          </div>
+          <div>
+            <label htmlFor="end">
+              <span>End Date: </span>
+            </label>
+            <input
+              type="date"
+              id="end"
+              name="end"
+              value={experience.end}
+              onChange={change}
+              placeholder="End Date"
+              max="2025-12-31"
+            />
+          </div>
+        </div>
+
+        <label htmlFor="location">
+          <span>Location: </span>
+        </label>
+        <input
+          type="text"
+          id="location"
+          name="location"
+          value={experience.location}
+          onChange={change}
+          placeholder="Location"
+        />
+
+        <label htmlFor="description">
+          <span>Job Description: </span>
+        </label>
+        <textarea
+          type="textarea"
+          id="description"
+          name="description"
+          value={experience.description}
+          onChange={change}
+          placeholder="description"
+        />
+      </section>
+      <Actions addFunction={addFunction} />
+    </>
+  );
+};
+
 const Actions = ({ addFunction, removeFunction }) => {
+  const [clickCount, setClickCount] = useState(0);
+  const handleButtonClick = () => {
+    setClickCount(clickCount + 1);
+  };
+
   return (
     <div>
       <button
@@ -210,6 +343,7 @@ const Actions = ({ addFunction, removeFunction }) => {
         onClick={(e) => {
           e.preventDefault();
           addFunction();
+          handleButtonClick();
         }}
       >
         Add
@@ -228,4 +362,4 @@ const Actions = ({ addFunction, removeFunction }) => {
   );
 };
 
-export { PersonalInput, EducationInput };
+export { PersonalDetails, PersonalInput, EducationInput, ExperienceInput };

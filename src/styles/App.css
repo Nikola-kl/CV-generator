@@ -37,6 +37,7 @@
   box-shadow: 0 7px 29px 0 hsla(240, 5%, 41%, 0.2);
   border-radius: 10px;
   padding: 2rem 4rem;
+  width: 1200px;
 }
 
 .rightPart {

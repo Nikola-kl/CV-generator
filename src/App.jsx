@@ -2,16 +2,21 @@ import { Fragment, useCallback, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import { MainPart } from "./components/MainPart";
-import { PersonalInput, EducationInput } from "./components/form";
+import {
+  PersonalInput,
+  EducationInput,
+  ExperienceInput,
+} from "./components/form";
 import "./styles/App.css";
 
 function App() {
   const [appData, setAppData] = useState({
     personal: {},
     education: [],
+    experience: [],
   });
 
-  console.log(appData);
+  // console.log(appData);
 
   const handleSetAppData = useCallback(
     (data) => {
@@ -34,18 +39,31 @@ function App() {
           };
         });
       }
+      if (data?.type === "experience") {
+        setAppData((state) => {
+          return {
+            ...state,
+            [data.type]: [...state[data.type], { ...data.information }],
+          };
+        });
+      }
     },
     [setAppData]
   );
   return (
     <div className="borderSpacing layout">
       <div className="leftPart">
-        <MainPart personal={appData?.personal} education={appData?.education} />
+        <MainPart
+          personal={appData?.personal}
+          education={appData?.education}
+          experience={appData?.experience}
+        />
       </div>
 
       <div className="rightPart">
         <PersonalInput handleSetAppData={handleSetAppData} />
         <EducationInput handleSetAppData={handleSetAppData} />
+        <ExperienceInput handleSetAppData={handleSetAppData} />
       </div>
     </div>
   );
