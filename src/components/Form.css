@@ -77,24 +77,6 @@ section {
   border: 2px solid var(--seagull-950);
 }
 
-.add {
-  background-color: var(--seagull-950);
-  transition: background-color 0.25s, border-color 0.25s;
-}
-
-.add:hover {
-  background-color: var(--seagull-500);
-  border-color: var(--seagull-500);
-}
-
-.remove {
-  background-color: transparent;
-  color: var(--wild-sand-600);
-}
-
-.remove:hover {
-  border-color: var(--seagull-500);
-}
 .add:focus,
 .add:focus-visible,
 .add:active {

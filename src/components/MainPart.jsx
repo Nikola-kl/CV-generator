@@ -1,6 +1,6 @@
 import "./MainPart.css";
 import { ExperienceSection, EducationSection } from "./MainPartSections";
-import { PersonalDetails } from "./form";
+import { PersonalDetails } from "./ui/InputFields";
 
 function MainPart({ personal, education, experience }) {
   const hasEducation = education && education.length > 0;
@@ -57,13 +57,5 @@ function MainPart({ personal, education, experience }) {
     </>
   );
 }
-
-const EducationSectionTitle = () => {
-  return <h2 className="sectionTitle">Education</h2>;
-};
-
-const ExperienceSectionTitle = () => {
-  return <h2 className="sectionTitle">Experience</h2>;
-};
 
 export { MainPart };
