@@ -1,6 +1,7 @@
 import { Fragment, useState } from "react";
 import { NewEducationInput, NewExperienceInput } from "./ui/AddNewInputField";
 import { PersonalDetails } from "./ui/InputFields";
+import { EducationDetailsMinimized } from "./ui/InputFieldsMinimized";
 import "./Form.css";
 
 const PersonalInput = ({ handleSetAppData }) => {
@@ -32,7 +33,6 @@ const EducationInput = ({ handleSetAppData, educationData }) => {
       <button className="buttonTitle" type="button" onClick={handleMoreClick}>
         <h2>Education</h2>
       </button>
-      {/* {showMore && <EducationDetails handlesetAppData={handleSetAppData} />} */}
       {showMore && (
         <NewEducationInput
           handleSetAppData={handleSetAppData}

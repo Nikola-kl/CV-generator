@@ -1,8 +1,3 @@
-# React + Vite
+This CV generator uses React in Vite with HMR and some ESLint rules.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The initial phase of the project included basic markup and styling. Later in the development phase I added functionality for rendering the inputs and text in the main part of the CV generator.
