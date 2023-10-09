@@ -4,7 +4,7 @@ import {
   PersonalInput,
   EducationInput,
   ExperienceInput,
-} from "./components/form";
+} from "./components/Form";
 import "./styles/App.css";
 
 function App() {
