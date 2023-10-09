@@ -181,7 +181,9 @@ function EducationItem({ idKey, handleSetAppData, initialData }) {
           e.preventDefault();
           handleDelete(idKey);
         }}
-      ></button>
+      >
+        Remove
+      </button>
     </>
   );
 }
@@ -303,7 +305,9 @@ function ExperienceItem({ idKey, handleSetAppData, initialData }) {
           e.preventDefault();
           handleDelete(idKey);
         }}
-      ></button>
+      >
+        Remove
+      </button>
     </>
   );
 }

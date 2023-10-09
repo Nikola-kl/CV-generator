@@ -1,6 +1,4 @@
 import { Fragment, useCallback, useState, useEffect } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import { MainPart } from "./components/MainPart";
 import {
   PersonalInput,
