@@ -14,8 +14,6 @@ function App() {
     experience: [],
   });
 
-  // console.log(appData);
-
   const handleSetAppData = useCallback(
     (data) => {
       // data should have a type, either "personal" or "education"

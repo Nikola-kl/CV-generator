@@ -176,7 +176,7 @@ function EducationItem({ idKey, handleSetAppData, initialData }) {
         />
       </section>
       <button
-        className="delete-education"
+        className="remove"
         onClick={(e) => {
           e.preventDefault();
           handleDelete(idKey);
@@ -300,7 +300,7 @@ function ExperienceItem({ idKey, handleSetAppData, initialData }) {
         />
       </section>
       <button
-        className="delete-education"
+        className="remove"
         onClick={(e) => {
           e.preventDefault();
           handleDelete(idKey);

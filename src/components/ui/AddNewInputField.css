@@ -1,3 +1,29 @@
+.newSectionMargin {
+  margin: 0.4rem 0;
+  padding: 0.4rem;
+}
+
+.border {
+  border: 1px solid var(--seagull-700);
+  border-radius: 10px;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.newFieldTitle {
+  padding: 6px 25px;
+  background-color: transparent;
+  font-size: 1.1rem;
+  color: var(--seagull-900);
+  transition: all 0.15s;
+}
+
+.newFieldTitle:hover {
+  color: var(--seagull-500);
+}
+
 .newInputFieldBtn {
   border: 1px solid var(--seagull-800);
   padding: 6px 25px;
@@ -5,4 +31,37 @@
   background-color: transparent;
   font-size: 1.1rem;
   color: var(--seagull-900);
+}
+
+.newInputFieldBtn:hover {
+  border: 2px solid var(--seagull-500);
+  color: var(--seagull-500);
+}
+
+.add {
+  background-color: var(--seagull-950);
+  transition: background-color 0.25s, border-color 0.25s;
+}
+
+.add:hover {
+  background-color: var(--seagull-500);
+  border-color: var(--seagull-500);
+}
+
+.remove {
+  background-color: transparent;
+  color: rgb(184, 0, 0);
+  border: 1px solid;
+  transition: all 0.15s;
+}
+
+.remove:hover {
+  background-color: rgb(184, 0, 0);
+  color: var(--wild-sand-100);
+}
+
+.ButtonsContainer {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
 }

@@ -21,7 +21,7 @@ function MainPart({ personal, education, experience }) {
           </div>
           <div>
             <i className="material-symbols-outlined">call</i>
-            <span>{personal?.phone ? personal?.phone : "+31212215"}</span>
+            <span>{personal?.phone ? personal?.phone : "Phone number"}</span>
           </div>
           <div>
             <i className="material-symbols-outlined">pin_drop</i>

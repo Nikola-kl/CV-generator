@@ -1,7 +1,6 @@
 import { Fragment } from "react";
 
 function EducationSection({ education }) {
-  // console.log({ education });
   return (
     <>
       <div className="bottomMargin">
@@ -23,7 +22,6 @@ function EducationSection({ education }) {
 }
 
 function ExperienceSection({ experience }) {
-  console.log(experience);
   return (
     <>
       <div className="section">

@@ -1,4 +1,4 @@
-import "./AddNewInputField";
+import "./AddNewInputField.css";
 import { EducationItem, ExperienceItem } from "./InputFields";
 import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
@@ -22,16 +22,17 @@ const NewEducationInput = ({ handleSetAppData, educationData }) => {
       },
     });
   };
-  console.log(educationData);
+
   return (
-    <div>
+    <div className="fullWidth">
       {educationData?.map((item, index) => (
-        <div key={item?.id}>
+        <div key={item?.id} className="newSectionMargin fullWidth border">
           <button
             onClick={(e) => {
               e.preventDefault();
               toggleShowMore(item?.id);
             }}
+            className="newFieldTitle fullWidth"
           >
             {showMoreState[item?.id]
               ? `Hide ${
@@ -84,14 +85,15 @@ const NewExperienceInput = ({ handleSetAppData, experienceData }) => {
   };
 
   return (
-    <div>
+    <div className="fullWidth">
       {experienceData?.map((item, index) => (
-        <div key={item?.id}>
+        <div key={item?.id} className="newSectionMargin fullWidth border">
           <button
             onClick={(e) => {
               e.preventDefault();
               toggleShowMore(item?.id);
             }}
+            className="newFieldTitle fullWidth"
           >
             {showMoreState[item?.id]
               ? `Hide ${

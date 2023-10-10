@@ -1,7 +1,6 @@
 import { Fragment, useState } from "react";
 import { NewEducationInput, NewExperienceInput } from "./ui/AddNewInputField";
 import { PersonalDetails } from "./ui/InputFields";
-import { EducationDetailsMinimized } from "./ui/InputFieldsMinimized";
 import "./Form.css";
 
 const PersonalInput = ({ handleSetAppData }) => {

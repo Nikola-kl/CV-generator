@@ -5,6 +5,10 @@
   align-items: center;
 }
 
+.formFlex span {
+  padding-left: 0.4rem;
+}
+
 section {
   margin-top: 1rem;
 }
@@ -24,10 +28,10 @@ section {
   align-self: start;
 }
 
-.formFlex input {
+.formFlex input,
+.formFlex textarea {
   align-self: flex-start;
   width: 100%;
-  min-width: 200px;
   height: 28px;
   margin-bottom: 0.8em;
   padding-left: 0.7rem;
@@ -40,7 +44,8 @@ section {
   letter-spacing: 0.05rem;
 }
 
-.formFlex input::placeholder {
+.formFlex input::placeholder,
+.formFlex textarea::placeholder {
   font-style: italic;
   color: var(--wild-sand-400);
 }
